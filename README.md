@@ -7,16 +7,15 @@ Nanomechanical resonant sensors are used in mass spectrometry via detection of r
 
 Please see https://arxiv.org/abs/XXXX.XXXXX for details.  
 
+| <p align="center"> <img src="figures/methods.jpg" width=50% height=50%> </p> | 
+|:--:| 
+| *Demonstration of Confidence Boosted Thresholding, ML aided Kalman Filtering and Black Box ML methods consecutively.* |
 
-<p align="center">
-<img src="figures/methods.jpg" width=45% height=45%>
-</p>
 
-(Figure demonstrates Confidence Boosted Thresholding, ML aided Kalman Filtering and Black Box ML methods consecutively.) 
 
-In the directory "threshold_method”, we present Confidence Boosted Thresholding for Kalman Filtering, together with the optimal threshold selection algorithm. 
+- In the directory "threshold_method”, we present Confidence Boosted Thresholding for Kalman Filtering, together with the optimal threshold selection algorithm. 
 
-In the directory "method_comparison”, we present the comparisons of the Blackbox ML, ML aided Kalman Filtering and Confidence Boosted Thresholding methods for nanomechanical mass spectrometry. This directory includes both MATLAB and Python codes, where the prerequisites are described in the README file inside the directory.
+- In the directory "method_comparison”, we present the comparisons of the Blackbox ML, ML aided Kalman Filtering and Confidence Boosted Thresholding methods for nanomechanical mass spectrometry. This directory includes both MATLAB and Python codes, where the prerequisites are described in the README file inside the directory.
 
 Dependencies:
 	
