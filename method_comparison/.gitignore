@@ -1,0 +1,5 @@
+# Ignore matlab datasets
+*.mat
+*.h5
+*.xlsx
+ExperimentResults/*
