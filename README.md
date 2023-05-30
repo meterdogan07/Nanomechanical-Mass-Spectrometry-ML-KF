@@ -9,7 +9,7 @@ Please see https://arxiv.org/abs/XXXX.XXXXX for details.
 
 | <p align="center"> <img src="figures/methods.jpg" width=50% height=50%> </p> | 
 |:--:| 
-| *Demonstration of Confidence Boosted Thresholding, ML aided Kalman Filtering and Black Box ML methods consecutively.* |
+| *Demonstrations of Confidence Boosted Thresholding, ML aided Kalman Filtering and Black Box ML methods.* |
 
 
 
