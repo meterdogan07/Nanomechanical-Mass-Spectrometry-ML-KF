@@ -5,7 +5,7 @@ addpath('../helper_functions/event_detection')
 
 w = 2; %event size selector
 window = 1; %window size selector
-conf = 1; %confidence parameter (C)
+conf = 2; %confidence parameter (C)
 Ms = [50, 20];
 M = Ms(window);
 
@@ -18,7 +18,7 @@ dys = [7.5e-4, 7.5e-6;
        1.25e-3, 1.25e-5];
 
 dy = dys(window, w);
-number_of_experiments = 2;
+number_of_experiments = 100;
 
 %[sum_threshold, sum_tensorflow, sum_ensemble, sum_MATLABnn, sum_XGB, sum_NN, sum_CNN, sum_XGB2] = sumInitalizers();
 kalman_res = [store_threshold; store_tensorflow; store_ensemble; store_matlabnn; store_xgboost];

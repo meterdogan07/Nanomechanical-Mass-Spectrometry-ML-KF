@@ -1,0 +1,4 @@
+# Ignore saved python models
+*.mat
+*.h5
+xgb*

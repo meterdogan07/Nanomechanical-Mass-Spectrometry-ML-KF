@@ -1,2 +1,3 @@
-# Ignore matlab datasets
+# Ignore saved models
+*.mat
 *.h5

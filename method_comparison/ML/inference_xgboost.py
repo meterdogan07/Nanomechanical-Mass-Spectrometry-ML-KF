@@ -13,7 +13,7 @@ import xgboost as xgb
 from sklearn.model_selection import train_test_split
 
 window_size = M
-model_savedir = "./ML/xgbmodel"+str(int(window_size))
+model_savedir = "./ML/saved_models/xgbmodel"+str(int(window_size))
 
 model_xgb = joblib.load(model_savedir)
 

@@ -16,9 +16,6 @@ from keras.callbacks import LearningRateScheduler
 
 
 # read data into memory
-#X = sys.argv[1]
-#label = sys.argv[2]
-#window_size = sys.argv[1]
 label = y
 window_size = M
 X = np.asarray(X)
@@ -54,6 +51,6 @@ model.add(tf.keras.layers.Dense(1, activation="sigmoid"))
 model.compile(loss = tf.keras.losses.BinaryCrossentropy(),optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.000001), metrics =["accuracy"])
 model.fit(X_train, y_train, epochs=250, batch_size=2000, callbacks=callbacks_list, verbose=1)
 
-model_savedir = "./ML/model/kalman_tf_"+str(int(window_size))+".h5"
+model_savedir = "./ML/saved_models/kalman_tf_"+str(int(window_size))+".h5"
 print(model_savedir)
 model.save(model_savedir)

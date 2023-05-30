@@ -40,6 +40,6 @@ data.loc[data["label"] == 1]
 model = xgb.XGBClassifier(max_depth=11, num_parallel_tree=1, use_label_encoder=False, verbose = 0)
 model.fit(X_train, y_train, verbose = True)
 
-model_savedir = "./ML/xgbmodel"+str(int(window_size))
+model_savedir = "./ML/saved_models/xgbmodel"+str(int(window_size))
 print(model_savedir)
 joblib.dump(model,model_savedir)

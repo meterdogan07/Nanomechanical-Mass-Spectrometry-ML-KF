@@ -1,3 +1,3 @@
-- main.py : Balckbox ML, ML aided Kalman Filtering and Confidence Boosted Thresholding methods can be run for a specified number of simulations. Then the resulting structs will be saved under ExperimentResults/ .
+- main.m : Balck Box ML, ML aided Kalman Filtering and Confidence Boosted Thresholding methods can be run for a specified number of simulations. Then the resulting structs will be saved under Experiment_Results/.
 
-- extract_result_tables : The average experiment results can be calculated for a given event size, window sizes and confidence parameters. Then the result tables are saved on an excel sheet.
+- extract_result_tables.m : The averaged experimental results can be calculated for a given event size, window sizes and confidence parameters. Then the result tables are saved in an excel sheet.

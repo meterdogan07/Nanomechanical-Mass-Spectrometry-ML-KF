@@ -1,0 +1,4 @@
+# Ignore saved results
+*.mat
+*.h5
+*.xlsx

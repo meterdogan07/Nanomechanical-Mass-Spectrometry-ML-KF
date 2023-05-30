@@ -2,4 +2,4 @@
 *.mat
 *.h5
 *.xlsx
-ExperimentResults/*
+xgb*
