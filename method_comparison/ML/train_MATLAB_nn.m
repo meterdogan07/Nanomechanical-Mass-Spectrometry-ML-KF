@@ -2,13 +2,15 @@
 function [net] = train_MATLAB_nn(data, label, M)
     layers = [
     imageInputLayer([1 1 M-1]);
-    fullyConnectedLayer(50)
+    fullyConnectedLayer(200)
     layerNormalizationLayer
-    reluLayer
+    tanhLayer
+    fullyConnectedLayer(100)
+    tanhLayer
     fullyConnectedLayer(50)
-    reluLayer
+    tanhLayer
     fullyConnectedLayer(10)
-    reluLayer
+    tanhLayer
     fullyConnectedLayer(2)
     softmaxLayer
     classificationLayer];
@@ -27,6 +29,7 @@ function [net] = train_MATLAB_nn(data, label, M)
     'Verbose', true, ...
     'MaxEpochs', 12 ...
     );
+
    
     x = data;
     ZZ = reshape(x', [1,1,size(x,2), size(x,1)]);

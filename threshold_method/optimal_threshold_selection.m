@@ -16,7 +16,7 @@ end
 threshold = 125; % LargeVal
 past_th = threshold;
 low_th = 0;
-number_of_experiments = 3;
+number_of_experiments = 100;
 results1 = [];
 keep1 = 1;
 

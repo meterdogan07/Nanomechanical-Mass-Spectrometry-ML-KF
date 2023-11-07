@@ -41,7 +41,7 @@ print(np.sum(y_train))
 X_train, y_train = X, events
 
 # fit model no training data
-model = xgb.XGBClassifier(max_depth=10, num_parallel_tree=1, use_label_encoder=False, verbose = 0)
+model = xgb.XGBClassifier(max_depth=10, use_label_encoder=False, verbose = 0)
 model.fit(X_train, y_train, verbose = False)
 
 model_savedir = "./Blackbox_ML/classification_xgbmodel"+str(int(window_size))

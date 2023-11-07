@@ -15,7 +15,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 window_size = M
-model_savedir = "./Bruteforce_ML/classification_xgbmodel"+str(int(window_size))
+model_savedir = "./Blackbox_ML/classification_xgbmodel"+str(int(window_size))
 
 model_xgb = joblib.load(model_savedir)
 

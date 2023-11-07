@@ -37,7 +37,7 @@ if (~isfield(struct_tensorflow,fieldname) || struct_tensorflow.a == 1)
     pyrunfile("./ML/tf_kalman_model.py", X=structdata.(fieldname), y=structlabel.(fieldname), M=window_size)
     tensorflow_train_ime = toc;
 end
-struct_tensorflow.(fieldname) = importKerasNetwork(strcat('./ML/model/kalman_tf_',int2str(window_size),'.h5'));
+struct_tensorflow.(fieldname) = importKerasNetwork(strcat('./ML/saved_models/kalman_tf_',int2str(window_size),'.h5'));
 
 
 % train Ensemble RUSBoost
@@ -87,21 +87,21 @@ addpath('../helper_functions/event_detection')
 
 if M==50 %if M=50 
     event_sizes = [7.5e-4, 7.5e-6];
+    threshold_val = 23;
 else %if M=20 
     event_sizes = [1.25e-3, 1.25e-5];
+    threshold_val = 19;
 end
 
-confidences = [1/4, 1/2]; % try different conficence (C) values 
+confidences = [1/2]; % try different conficence (C) values 
+number_of_experiments = 100; %1000
 
 for conf = 1:size(confidences,2)
     fname = strcat('Experiment_Results/allmethods_results_w',string(window_size),"_conf_",string(conf));
     %------------------------------------------------------------------------------------------------
     % ML Aided Kalman Experiments
     for eventSize = 1:size(event_sizes,2)
-        
         dy = event_sizes(eventSize); %Event size (fractional freq shift caused by the event)
-        number_of_experiments = 100; %1000
-
         for i=1:number_of_experiments
             %sensor simulation
             fprintf("experiment: %d, with event size: %f \n",i,dy)
@@ -109,7 +109,7 @@ for conf = 1:size(confidences,2)
     
             % perform test on the data
             methods = ["threshold","tensorflow","ensemble","MATLABnn","XGBoost"];
-            store_threshold(i) = run_kalman_simulation(methods(1), y_ro, 24, window_size, confidences(conf));
+            store_threshold(i) = run_kalman_simulation(methods(1), y_ro, threshold_val, window_size, confidences(conf));
             store_tensorflow(i) = run_kalman_simulation(methods(2), y_ro, struct_tensorflow.(fieldname), window_size, confidences(conf));
             store_ensemble(i) = run_kalman_simulation(methods(3), y_ro, struct_ensemble.(fieldname), window_size, confidences(conf));
             store_matlabnn(i) = run_kalman_simulation(methods(4), y_ro, struct_MATLAB_nn.(fieldname), window_size, confidences(conf));

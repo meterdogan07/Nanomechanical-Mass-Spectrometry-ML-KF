@@ -43,9 +43,10 @@ lrate = LearningRateScheduler(step_decay)
 callbacks_list = [lrate]
 
 model = tf.keras.Sequential()
-model.add(tf.keras.layers.Dense(50, activation="relu"))
-model.add(tf.keras.layers.Dense(50, activation="relu"))
-model.add(tf.keras.layers.Dense(10, activation="relu"))
+model.add(tf.keras.layers.Dense(200, activation="tanh"))
+model.add(tf.keras.layers.Dense(100, activation="tanh"))
+model.add(tf.keras.layers.Dense(50, activation="tanh"))
+model.add(tf.keras.layers.Dense(10, activation="tanh"))
 model.add(tf.keras.layers.Dense(1, activation="sigmoid"))
 
 model.compile(loss = tf.keras.losses.BinaryCrossentropy(),optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.000001), metrics =["accuracy"])

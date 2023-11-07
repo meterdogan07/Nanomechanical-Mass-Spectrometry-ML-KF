@@ -48,9 +48,9 @@ callbacks_list = [lrate]
 
 # define the keras model
 model = Sequential()
-model.add(Dense(100, input_dim=M, kernel_initializer='he_normal', activation='relu'))
-model.add(Dense(50, kernel_initializer='he_normal', activation='relu'))
-model.add(Dense(20, kernel_initializer='he_normal', activation='relu'))
+model.add(Dense(200, input_dim=M, kernel_initializer='he_normal', activation='elu'))
+model.add(Dense(100, kernel_initializer='he_normal', activation='elu'))
+model.add(Dense(50, kernel_initializer='he_normal', activation='elu'))
 model.add(Dense(1, activation='sigmoid'))
 
 # compile the keras model
@@ -80,10 +80,10 @@ callbacks_list = [lrate]
 
 # define the keras model
 model2 = Sequential()
-model2.add(Dense(500, activation='relu', kernel_initializer='he_normal'))
-model2.add(Dense(250, activation='relu', kernel_initializer='he_normal'))
-model2.add(Dense(100, activation='relu', kernel_initializer='he_normal'))
-model2.add(Dense(10, activation='relu', kernel_initializer='he_normal'))
+model2.add(Dense(500, activation='elu', kernel_initializer='he_normal'))
+model2.add(Dense(250, activation='elu', kernel_initializer='he_normal'))
+model2.add(Dense(100, activation='elu', kernel_initializer='he_normal'))
+model2.add(Dense(10, activation='elu', kernel_initializer='he_normal'))
 model2.add(Dense(2, activation='linear', kernel_initializer='he_normal'))
 
 # compile the keras model

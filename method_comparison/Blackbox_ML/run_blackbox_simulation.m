@@ -5,7 +5,7 @@ function [store, window_start] = run_blackbox_simulation(cnet_name, rnet_name, c
     false_detection = 0;
     event_count = 0;
     total_dy = 0;
-    CONF_THRESH = M/3;
+    CONF_THRESH = M/2;
 
     tic
     for k=2:nots-M

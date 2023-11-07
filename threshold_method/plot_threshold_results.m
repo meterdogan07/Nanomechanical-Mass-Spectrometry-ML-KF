@@ -45,7 +45,8 @@ figure
 set(gca,"FontSize",50)
 thresholds = 10:10:110;
 contourf(miss + false_detection, 6, "LineWidth", 0.01)
-colorbar
+c = colorbar;  
+c.Ruler.TickLabelFormat='%g%%';
 
 yticks(2:2:22)
 yticklabels(thresholds)
